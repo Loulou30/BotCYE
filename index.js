@@ -4,7 +4,7 @@ const talkedRecently = new Set();
 const prefix = "!"
 let cd = 5;
 
-client.login("NzE0NTM0MTEyODExMTU1NTE3.XswD-Q.-vPjIVqcqjMFDmIfApxIxsu__Dk")
+client.login("NzE0NTM0MTEyODExMTU1NTE3.XuPL8Q.8YdlD8Sval0fgnMNKI4xIjsU_Dg")
 
 client.commands = new Discord.Collection();
 
@@ -75,7 +75,7 @@ client.on('message', message => {
     if(message.guild.member(message.author).hasPermission("ADMINISTRATOR")) cmd.run(client, message, args);
 
     if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")){
-    if (talkedRecently.has(message.author.id) && !cmd.name === "help") {
+    if (talkedRecently.has(message.author.id)) {
         return message.channel.send("Tu ne peux pas faire ça trop vite, tu dois attendre !");
     } else if (!talkedRecently.has(message.author.id)) {
         talkedRecently.add(message.author.id)
